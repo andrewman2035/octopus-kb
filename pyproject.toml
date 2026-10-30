@@ -1,0 +1,79 @@
+[project]
+name = "octopus-kb"
+version = "0.1.0"
+description = "A personal AI knowledge base on your own machine: save links, screenshots, files and voice notes from chat apps, a browser extension or email as Markdown notes, then ask questions answered from them with sources."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "AndrewMan2035" }]
+requires-python = ">=3.12,<3.13"
+keywords = ["knowledge-base", "second-brain", "notes", "markdown", "obsidian", "llm", "rag", "telegram-bot",
+            "self-hosted", "personal-knowledge-management"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "Natural Language :: English",
+  "Natural Language :: Chinese (Simplified)",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Communications :: Chat",
+  "Topic :: Office/Business",
+  "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = [
+  "httpx>=0.27",
+  "trafilatura>=2.0",
+  "beautifulsoup4>=4.12",
+  "lxml>=5.0",
+  "pyyaml>=6.0",
+  "jieba>=0.42",
+  "sqlite-vec>=0.1.6",
+  "mlx-whisper>=0.4.3; sys_platform == 'darwin'",
+  "ocrmac>=1.0.1; sys_platform == 'darwin'",
+  "faster-whisper>=1.2.1; sys_platform == 'linux'",
+  "av>=11,<19; sys_platform == 'linux'",  # faster-whisper 1.2.1 passes av.open(metadata_errors=), gone in PyAV 19
+  "rapidocr>=3.10; sys_platform == 'linux'",
+  "onnxruntime>=1.20; sys_platform == 'linux'",
+  "opencc-python-reimplemented>=0.1.7",
+  "yt-dlp>=2026.8.19",
+  "youtube-transcript-api>=1.2.4",
+  "feedparser>=6.0.11",
+  "pypdf>=6.0",
+  "pypdfium2>=5.0",
+  "pillow>=11.0",
+  "keyring>=25.0",
+  "python-telegram-bot>=22.0",
+  "lark-oapi>=1.7",
+  "cryptography>=43",
+  "qrcode[pil]>=8.0",
+  "discord-py>=2.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/andrewman2035/octopus-kb"
+Repository = "https://github.com/andrewman2035/octopus-kb"
+Issues = "https://github.com/andrewman2035/octopus-kb/issues"
+Changelog = "https://github.com/andrewman2035/octopus-kb/blob/main/CHANGELOG.md"
+
+[project.scripts]
+octopus = "octopus.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "respx>=0.21"]
+
+[build-system]
+requires = ["hatchling>=1.27"]  # PEP 639 license / license-files
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/octopus"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+filterwarnings = ["ignore::SyntaxWarning", "ignore:'audioop' is deprecated:DeprecationWarning:discord.player"]
+markers = ["live: needs real models or network (run with -m live)"]
+addopts = "-m 'not live'"

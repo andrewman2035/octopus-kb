@@ -1,0 +1,16 @@
+# An allowlist: only what the Dockerfile COPYs reaches the build context. No data, secrets, .env, .git or notes.
+*
+!pyproject.toml
+!uv.lock
+!README.md
+!LICENSE
+!src
+!tests
+!scripts
+!extension/shortcuts
+!extension/chrome
+**/__pycache__
+**/*.pyc
+**/.DS_Store
+# signed Shortcuts carry the signer's Apple certificate; the tests skip without them
+**/*.shortcut

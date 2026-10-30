@@ -1,0 +1,178 @@
+{
+  "extName": {
+    "message": "Octopus"
+  },
+  "extDescription": {
+    "message": "把正在看的网页、选中的文字、图片存到本机的 Octopus"
+  },
+  "actionTitle": {
+    "message": "Octopus：最近存的"
+  },
+  "menuSave": {
+    "message": "存到 Octopus"
+  },
+  "received": {
+    "message": "已收到"
+  },
+  "notRunning": {
+    "message": "Octopus 没在运行"
+  },
+  "badToken": {
+    "message": "密码不对"
+  },
+  "tooBig": {
+    "message": "内容太大"
+  },
+  "noToken": {
+    "message": "请先设置：在设置里粘贴密码"
+  },
+  "setupHint": {
+    "message": "在终端里进入 git clone 下来的 octopus-kb 文件夹，运行下面这条命令（Mac 上会同时复制到剪贴板），再把密码粘贴到设置里："
+  },
+  "openSettings": {
+    "message": "打开设置"
+  },
+  "cantSave": {
+    "message": "这个页面不能存"
+  },
+  "noImage": {
+    "message": "读不到这张图片"
+  },
+  "failed": {
+    "message": "没存上"
+  },
+  "failedStatus": {
+    "message": "没存上（$STATUS$）",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "empty": {
+    "message": "还没有存过东西"
+  },
+  "connected": {
+    "message": "已连上 Octopus"
+  },
+  "saved": {
+    "message": "已保存"
+  },
+  "noTelegram": {
+    "message": "Octopus 里没有配置 Telegram，勾了也不会发"
+  },
+  "savePageButton": {
+    "message": "存这个页面"
+  },
+  "saveAgainButton": {
+    "message": "已存过，再存一次"
+  },
+  "savingButton": {
+    "message": "正在保存…"
+  },
+  "listOnly": {
+    "message": "最近存的"
+  },
+  "lastError": {
+    "message": "（刚才右键或快捷键存的：$TEXT$）",
+    "placeholders": {
+      "text": {
+        "content": "$1"
+      }
+    }
+  },
+  "kindPage": {
+    "message": "网页"
+  },
+  "kindSelection": {
+    "message": "选中的文字"
+  },
+  "kindImage": {
+    "message": "图片"
+  },
+  "stateProcessing": {
+    "message": "处理中"
+  },
+  "stateSaved": {
+    "message": "已存"
+  },
+  "stateIncomplete": {
+    "message": "已存（内容不完整）"
+  },
+  "stateFailed": {
+    "message": "失败"
+  },
+  "idLine": {
+    "message": "id：$ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1"
+      }
+    }
+  },
+  "settings": {
+    "message": "设置"
+  },
+  "optionsTitle": {
+    "message": "Octopus 设置"
+  },
+  "tokenLabel": {
+    "message": "密码"
+  },
+  "tokenHint": {
+    "message": "密码由你自己的 Octopus 生成：在终端里进入 git clone 下来的 octopus-kb 文件夹，运行下面这条命令（Mac 上会同时复制到剪贴板），再粘贴到这里："
+  },
+  "dockerHint": {
+    "message": "Octopus 跑在 Docker 里时："
+  },
+  "copyButton": {
+    "message": "复制"
+  },
+  "copied": {
+    "message": "已复制"
+  },
+  "portLabel": {
+    "message": "端口"
+  },
+  "portHint": {
+    "message": "和 config.toml 里 [channels.extension] 的 port 一样，默认 8765。"
+  },
+  "telegramLabel": {
+    "message": "同时发到 Telegram"
+  },
+  "telegramHint": {
+    "message": "存好后，把结果也发给你的 Telegram。"
+  },
+  "saveButton": {
+    "message": "保存"
+  },
+  "uiLanguageLabel": {
+    "message": "插件的语言"
+  },
+  "uiAuto": {
+    "message": "跟随浏览器"
+  },
+  "commandSavePage": {
+    "message": "把这个页面存到 Octopus"
+  },
+  "shortcutLabel": {
+    "message": "快捷键"
+  },
+  "shortcutHint": {
+    "message": "默认按 Alt+Shift+S（Mac 上是 Option+Shift+S）不打开弹窗，直接存当前页面。这个标签页 10 分钟内存过东西时不再发送，图标上只出现灰色的 ✓。在 chrome://extensions/shortcuts 里可以改键（别的扩展已经占用这个键时 Chrome 不会设上，在那里自己选一个）。"
+  },
+  "savedAlreadyTitle": {
+    "message": "10 分钟内存过：没有再发"
+  },
+  "shortcutNow": {
+    "message": "现在是：$KEY$",
+    "placeholders": {
+      "key": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcutUnset": {
+    "message": "还没有设上：到 chrome://extensions/shortcuts 里设一个"
+  }
+}

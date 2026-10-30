@@ -1,0 +1,11 @@
+.omc/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.superpowers/
+.DS_Store
+/data/
+.env
+# signed Shortcuts carry the signer's Apple certificate: everyone builds and signs their own with build.py
+*.shortcut

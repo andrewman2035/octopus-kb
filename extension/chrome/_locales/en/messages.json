@@ -1,0 +1,178 @@
+{
+  "extName": {
+    "message": "Octopus"
+  },
+  "extDescription": {
+    "message": "Save the page you are reading, selected text or an image to Octopus on this computer"
+  },
+  "actionTitle": {
+    "message": "Octopus — recent saves"
+  },
+  "menuSave": {
+    "message": "Save to Octopus"
+  },
+  "received": {
+    "message": "Received"
+  },
+  "notRunning": {
+    "message": "Octopus is not running"
+  },
+  "badToken": {
+    "message": "Wrong password"
+  },
+  "tooBig": {
+    "message": "Too large"
+  },
+  "noToken": {
+    "message": "Set up first: paste the password in the settings"
+  },
+  "setupHint": {
+    "message": "In a terminal, in the folder you cloned Octopus into (octopus-kb), run this command (on a Mac it also copies the password), then paste it in the settings:"
+  },
+  "openSettings": {
+    "message": "Open settings"
+  },
+  "cantSave": {
+    "message": "This page can't be saved"
+  },
+  "noImage": {
+    "message": "Can't read this image"
+  },
+  "failed": {
+    "message": "Not saved"
+  },
+  "failedStatus": {
+    "message": "Not saved ($STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "empty": {
+    "message": "Nothing saved yet"
+  },
+  "connected": {
+    "message": "Connected to Octopus"
+  },
+  "saved": {
+    "message": "Saved"
+  },
+  "noTelegram": {
+    "message": "Telegram is not set up in Octopus, so nothing will be sent there"
+  },
+  "savePageButton": {
+    "message": "Save this page"
+  },
+  "saveAgainButton": {
+    "message": "Saved already — save again"
+  },
+  "savingButton": {
+    "message": "Saving…"
+  },
+  "listOnly": {
+    "message": "Recently saved"
+  },
+  "lastError": {
+    "message": " (the right-click or shortcut save just now: $TEXT$)",
+    "placeholders": {
+      "text": {
+        "content": "$1"
+      }
+    }
+  },
+  "kindPage": {
+    "message": "Page"
+  },
+  "kindSelection": {
+    "message": "Selection"
+  },
+  "kindImage": {
+    "message": "Image"
+  },
+  "stateProcessing": {
+    "message": "Saving"
+  },
+  "stateSaved": {
+    "message": "Saved"
+  },
+  "stateIncomplete": {
+    "message": "Saved (incomplete)"
+  },
+  "stateFailed": {
+    "message": "Failed"
+  },
+  "idLine": {
+    "message": "id: $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1"
+      }
+    }
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "optionsTitle": {
+    "message": "Octopus settings"
+  },
+  "tokenLabel": {
+    "message": "Password"
+  },
+  "tokenHint": {
+    "message": "Your Octopus makes this password. In a terminal, in the folder you cloned Octopus into (octopus-kb), run this command (on a Mac it also copies the password), then paste it here:"
+  },
+  "dockerHint": {
+    "message": "Octopus in Docker:"
+  },
+  "copyButton": {
+    "message": "Copy"
+  },
+  "copied": {
+    "message": "Copied"
+  },
+  "portLabel": {
+    "message": "Port"
+  },
+  "portHint": {
+    "message": "The same as port in [channels.extension] of config.toml; 8765 by default."
+  },
+  "telegramLabel": {
+    "message": "Also send to Telegram"
+  },
+  "telegramHint": {
+    "message": "When it is saved, the result is also sent to your Telegram."
+  },
+  "saveButton": {
+    "message": "Save"
+  },
+  "uiLanguageLabel": {
+    "message": "Extension language"
+  },
+  "uiAuto": {
+    "message": "Follow the browser"
+  },
+  "commandSavePage": {
+    "message": "Save this page to Octopus"
+  },
+  "shortcutLabel": {
+    "message": "Keyboard shortcut"
+  },
+  "shortcutHint": {
+    "message": "By default Alt+Shift+S (Option+Shift+S on a Mac) saves the page you are on without opening the popup. If that tab saved something in the last 10 minutes, nothing is sent and the icon shows a grey ✓. Change the keys at chrome://extensions/shortcuts (Chrome leaves the shortcut unset when another extension already uses it: pick one there)."
+  },
+  "savedAlreadyTitle": {
+    "message": "Saved already in the last 10 minutes: not sent again"
+  },
+  "shortcutNow": {
+    "message": "Now: $KEY$",
+    "placeholders": {
+      "key": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcutUnset": {
+    "message": "Not set: set one at chrome://extensions/shortcuts"
+  }
+}

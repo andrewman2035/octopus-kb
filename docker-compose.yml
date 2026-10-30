@@ -1,0 +1,43 @@
+# Octopus on a Linux server / NAS (P22). See README.md, "Linux and Docker".
+#
+#   mkdir -p data                                   # owned by you (uid 1000 by default, see `user:` below)
+#   docker compose run --rm octopus init            # writes data/config.toml (English unless --language zh)
+#   docker compose run --rm octopus secret set telegram_token   # saved to data/secrets.toml (0600)
+#   docker compose up -d                            # add --profile ollama for the local Ollama below
+services:
+  octopus:
+    build: .
+    image: octopus:latest
+    restart: unless-stopped
+    init: true  # reaps ffmpeg / yt-dlp children
+    user: "${OCTOPUS_UID:-1000}:${OCTOPUS_GID:-1000}"
+    volumes:
+      - ./data:/data  # config.toml, notes, database, logs, secrets.toml, model caches
+    ports:
+      # Chrome extension: only this machine can reach it. Needs [channels.extension] bind = "0.0.0.0" in
+      # data/config.toml, and the same port number on both sides (the extension sends Host 127.0.0.1:8765).
+      - "127.0.0.1:8765:8765"
+    environment:
+      TZ: ${TZ:-UTC}  # your time zone: TZ=Europe/Berlin in .env
+      # Keys can come from the environment instead of `octopus secret set` (the Claude subscription CLI is not
+      # in this image: use an API key, see README). Never commit real values; prefer an .env file:
+      # ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      # OCTOPUS_DEEPSEEK_API_KEY: ${OCTOPUS_DEEPSEEK_API_KEY}
+      # OCTOPUS_TELEGRAM_TOKEN: ${OCTOPUS_TELEGRAM_TOKEN}
+      # OCTOPUS_FEISHU_APP_ID: ${OCTOPUS_FEISHU_APP_ID}
+      # OCTOPUS_FEISHU_APP_SECRET: ${OCTOPUS_FEISHU_APP_SECRET}
+      # OCTOPUS_EXTENSION_TOKEN: ${OCTOPUS_EXTENSION_TOKEN}
+      # OCTOPUS_DISCORD_BOT_TOKEN: ${OCTOPUS_DISCORD_BOT_TOKEN}
+      # OCTOPUS_EMAIL_PASSWORD: ${OCTOPUS_EMAIL_PASSWORD}
+
+  # Optional local models (embeddings for search, a fallback LLM): docker compose --profile ollama up -d
+  # Then in data/config.toml: [local_llm] and [embed] base_url = "http://ollama:11434"
+  ollama:
+    image: ollama/ollama:0.40.11
+    profiles: ["ollama"]
+    restart: unless-stopped
+    volumes:
+      - ollama:/root/.ollama
+
+volumes:
+  ollama:
