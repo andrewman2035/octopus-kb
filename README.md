@@ -2,16 +2,55 @@
 
 English · [简体中文](README.zh-CN.md)
 
-Octopus is a personal AI knowledge base that runs on your own computer. Send it the links, screenshots, files and
-voice notes you come across, or save a piece of text with `/s`; it reads, transcribes or OCRs them and writes each one
-as a Markdown note with a title, summary, key points and tags. Chat with it normally and it searches your own notes
-first, then answers with numbered sources. You reach it from the chat apps you already use (Telegram, Feishu,
-WeChat ClawBot, Discord), the terminal, a Chrome extension, macOS Shortcuts, or by forwarding email.
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)
+![macOS (Apple Silicon) · Linux · Docker](https://img.shields.io/badge/runs%20on-macOS%20%28Apple%20Silicon%29%20%C2%B7%20Linux%20%C2%B7%20Docker-lightgrey.svg)
 
-What it looks like in practice: you paste a YouTube link into Telegram; a moment later Octopus replies "Got it,
-working on it…", then sends the note's title, a three-sentence summary, a few tags and its id. Days later you ask
-"what was that video about long-term investing?" and it answers in a few paragraphs, citing `[1]` with that note's
-title and link. The note itself is a plain `.md` file you can open in any editor or in Obsidian.
+**Your own AI knowledge base. Send it links, screenshots, files and voice notes from the chat app you already use;
+it reads, transcribes and summarizes them into Markdown notes on your own disk, and answers your questions from
+them with sources.**
+
+```text
+You:      https://www.youtube.com/watch?v=…            (pasted into Telegram)
+Octopus:  Got it, working on it…
+Octopus:  ✅ Saved: How index funds really work
+          …a short summary…
+          #investing #index-funds
+          id: 20261013-7f3a2c
+
+  … a week later …
+
+You:      what was that video about long-term investing?
+Octopus:  It argued that … [1]
+
+          Sources:
+          [1] How index funds really work (id: 20261013-7f3a2c) https://www.youtube.com/watch?v=…
+```
+
+## Why Octopus
+
+- **Save from wherever you are.** Telegram, Discord, Feishu, WeChat (ClawBot), email, a Chrome extension, macOS
+  Shortcuts or the terminal. No new app to open: share a link to the bot and you are done.
+- **It reads what many tools only link to.** WeChat Official Account articles are saved in full; YouTube and
+  Bilibili videos, X videos, podcasts and voice notes are transcribed; screenshots are OCR'd. Pages behind a login
+  (Xiaohongshu, Zhihu, Reddit, Instagram …) are saved from your own logged-in Chrome with one click, and Octopus tells
+  you when that is needed.
+- **Your notes, your disk.** Every entry is a plain `.md` file with a summary, key points and tags. Put the folder in
+  your Obsidian vault; nothing is locked into a database or a cloud account.
+- **Ask your notes, not the internet.** Questions are answered from what you saved, with numbered citations; when
+  nothing relevant is saved, it says so.
+- **Your choice of model.** Use your Claude subscription (through Claude Code), an API key, any OpenAI-compatible
+  service, or run fully local with Ollama.
+- **Free and open source** (MIT). Runs on macOS (Apple Silicon), Linux or Docker; Windows through WSL2.
+
+| | Octopus | Typical cloud read-later / AI note apps |
+|---|---|---|
+| Where notes live | Markdown files on your computer | the vendor's servers |
+| How you save | the chat apps you already use, browser, email | their app or extension |
+| Video, podcasts, voice | transcribed and summarized | often a link only |
+| Chinese platforms (WeChat articles, Bilibili, Xiaoyuzhou …) | built in | rarely |
+| Model | your choice, local possible | theirs |
+| Price | free; you pay only for the model you use (nothing if it runs locally) | subscription |
 
 ## Features
 

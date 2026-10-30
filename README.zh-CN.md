@@ -2,7 +2,46 @@
 
 [English](README.md) · 简体中文
 
-Octopus 是一个个人 AI 知识库：把你读到的链接、截图、文件发给它，或者用 `/s` 存一段文字，它会整理成带摘要和标签的 Markdown 笔记；平时直接和它聊天，它会先查你自己的笔记再回答，并标出来源。入口可以是终端、Telegram、飞书、微信 ClawBot、Discord，也可以转发邮件、用 Chrome 插件或 Mac 上的快捷指令直接存。
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)
+![macOS (Apple Silicon) · Linux · Docker](https://img.shields.io/badge/runs%20on-macOS%20%28Apple%20Silicon%29%20%C2%B7%20Linux%20%C2%B7%20Docker-lightgrey.svg)
+
+**你自己的 AI 知识库。在常用的聊天软件里把链接、截图、文件、语音发给它，它会读完、转写、总结成 Markdown 笔记，存在你自己的电脑上；以后问它问题，它从你存过的内容里找答案，并标出来源。**
+
+```text
+你：      https://www.bilibili.com/video/BV…        （在微信 / Telegram / 飞书里发给它）
+Octopus： 收到，处理中…
+Octopus： ✅ 已保存：指数基金到底怎么赚钱
+          ……一小段摘要……
+          #投资 #指数基金
+          id：20261013-7f3a2c
+
+  …… 一周后 ……
+
+你：      之前那个讲长期投资的视频说了什么？
+Octopus： 视频的观点是……[1]
+
+          来源：
+          [1] 指数基金到底怎么赚钱（id：20261013-7f3a2c） https://www.bilibili.com/video/BV…
+```
+
+## 为什么用 Octopus
+
+- **在哪儿看到就在哪儿存。** 微信（ClawBot）、Telegram、飞书、Discord、邮件转发、Chrome 插件、Mac 快捷指令、终端都行。不用多装一个 App，转发给机器人就存好了。
+- **很多工具只存个链接的，它能存下内容。** 公众号文章存全文；B站、YouTube 和 X 的视频、小宇宙等播客、语音消息都会转写成文字；截图会识别文字。小红书、知乎、Reddit 这类要登录才能看的页面，用 Chrome 插件在你自己登录好的浏览器里一键存，什么时候需要这么做，Octopus 会提醒你。
+- **笔记在你自己手里。** 每条都是一个普通的 `.md` 文件，带摘要、要点和标签。整个文件夹可以直接放进 Obsidian，不锁在任何数据库或云账号里。
+- **问的是你自己的笔记。** 回答先查你存过的内容，并标出 [1] [2] 来源；没存过相关内容会直说。
+- **模型自己选。** 用你的 Claude 订阅（通过 Claude Code）、API key、任何兼容 OpenAI 的服务，或者用 Ollama 完全在本地跑。
+- **免费开源**（MIT）。macOS（Apple 芯片）、Linux、Docker 都能跑，Windows 可以用 WSL2。
+
+| | Octopus | 常见的云端稍后读 / AI 笔记应用 |
+|---|---|---|
+| 笔记存在哪 | 你电脑上的 Markdown 文件 | 厂商的服务器 |
+| 怎么存 | 平时用的聊天软件、浏览器、邮件 | 它自己的 App 或插件 |
+| 视频、播客、语音 | 转写并总结 | 常常只存个链接 |
+| 公众号、B站、小宇宙等中文平台 | 内置支持 | 很少支持 |
+| 模型 | 自己选，可以全本地 | 它定的 |
+| 价格 | 免费，只为你用的模型付费（全本地就不花钱） | 订阅制 |
 
 ## 环境要求
 
